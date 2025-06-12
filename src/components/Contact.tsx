@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MessageSquare, Send, MapPin, Clock } from 'lucide-react';
+import { Mail, MessageSquare, Send, MapPin, Clock, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -39,19 +39,24 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Create mailto link with form data
-      const subject = encodeURIComponent(formData.subject);
+      // Create a proper mailto link with corrected email
+      const subject = encodeURIComponent(`[Portfolio Contact] ${formData.subject}`);
       const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+        `Hello Alex,\n\nYou have received a new message from your portfolio contact form:\n\n` +
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}\n\n` +
+        `---\nSent from your portfolio website`
       );
-      const mailtoLink = `mailto:mjyothish04@gmail.com?subject=${subject}&body=${body}`;
       
-      // Open mail client
-      window.location.href = mailtoLink;
+      // Open mail client with corrected email
+      const mailtoLink = `mailto:mjyothish04@gmail.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
       
       toast({
-        title: "Mail client opened! 📧",
-        description: "Your default mail client should open with the pre-filled message.",
+        title: "Message Prepared! 📧",
+        description: "Your default mail client will open with the message ready to send.",
       });
       
       // Reset form
@@ -82,131 +87,171 @@ const Contact = () => {
       icon: Mail,
       label: "Email",
       value: "mjyothish04@gmail.com",
-      color: "text-orange-500"
+      color: "text-orange-500",
+      bgColor: "bg-orange-50",
+      borderColor: "border-orange-200"
     },
     {
       icon: MessageSquare,
       label: "Phone",
       value: "+1 (555) 123-4567",
-      color: "text-blue-500"
+      color: "text-blue-500",
+      bgColor: "bg-blue-50",
+      borderColor: "border-blue-200"
     },
     {
       icon: MapPin,
       label: "Location",
       value: "San Francisco, CA",
-      color: "text-green-500"
+      color: "text-emerald-500",
+      bgColor: "bg-emerald-50",
+      borderColor: "border-emerald-200"
     },
     {
       icon: Clock,
       label: "Response Time",
       value: "Within 24 hours",
-      color: "text-purple-500"
+      color: "text-purple-500",
+      bgColor: "bg-purple-50",
+      borderColor: "border-purple-200"
     }
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-transparent to-orange-100/30"></div>
+    <section id="contact" className="py-32 bg-gradient-to-br from-slate-50 via-white to-orange-50/30 relative overflow-hidden">
+      {/* Premium animated background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-orange-200/30 to-pink-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 right-10 w-96 h-96 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-gradient-to-r from-indigo-200/30 to-emerald-200/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind? Let's chat about building something amazing together.
+        <div className="max-w-7xl mx-auto">
+          {/* Premium header with animations */}
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium mb-6 animate-bounce-gentle">
+              <CheckCircle size={16} />
+              Ready to Connect
+            </div>
+            <h2 className="text-6xl md:text-7xl font-black mb-8 bg-gradient-to-r from-slate-900 via-orange-600 to-slate-900 bg-clip-text text-transparent leading-tight">
+              Let's Create
+              <br />
+              <span className="text-orange-500">Something Amazing</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
+              Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Let's start a conversation</h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
-                  I'm always interested in hearing about new opportunities and interesting projects. 
-                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
+          <div className="grid xl:grid-cols-5 gap-16 items-start">
+            {/* Contact info sidebar */}
+            <div className="xl:col-span-2 space-y-8">
+              <div className="space-y-6">
+                <h3 className="text-3xl font-bold text-slate-900 mb-8">Get in Touch</h3>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Have a project in mind? I'm always excited to hear about new opportunities and challenges. Let's turn your ideas into reality.
                 </p>
               </div>
               
-              <div className="grid gap-6">
+              <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
-                    <info.icon className={`${info.color} bg-muted rounded-lg p-2`} size={40} />
-                    <div>
-                      <p className="font-medium text-foreground">{info.label}</p>
-                      <p className="text-muted-foreground">{info.value}</p>
+                  <div 
+                    key={index} 
+                    className={`group p-6 ${info.bgColor} ${info.borderColor} border-2 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-500 cursor-pointer backdrop-blur-sm`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`${info.color} p-3 bg-white rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-300`}>
+                        <info.icon size={24} />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900 text-lg">{info.label}</p>
+                        <p className="text-slate-600 font-medium">{info.value}</p>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             
-            <Card className="shadow-xl border-border backdrop-blur-sm">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-semibold mb-6">Send a message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
+            {/* Premium contact form */}
+            <div className="xl:col-span-3">
+              <Card className="shadow-2xl border-0 backdrop-blur-lg bg-white/80 rounded-3xl overflow-hidden">
+                <CardContent className="p-10">
+                  <div className="mb-8">
+                    <h3 className="text-3xl font-bold text-slate-900 mb-3">Send a Message</h3>
+                    <p className="text-slate-600 text-lg">Fill out the form below and I'll get back to you within 24 hours.</p>
+                  </div>
+                  
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-3">
+                        <label className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Your Name</label>
+                        <Input
+                          name="name"
+                          placeholder="Enter your full name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className={`h-14 text-lg border-2 rounded-xl transition-all duration-300 focus:scale-105 focus:shadow-lg ${errors.name ? 'border-red-400 bg-red-50' : 'border-slate-200 focus:border-orange-400'}`}
+                          required
+                        />
+                        {errors.name && <p className="text-red-500 text-sm font-medium flex items-center gap-2">⚠ {errors.name}</p>}
+                      </div>
+                      
+                      <div className="space-y-3">
+                        <label className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Email Address</label>
+                        <Input
+                          name="email"
+                          type="email"
+                          placeholder="your.email@example.com"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className={`h-14 text-lg border-2 rounded-xl transition-all duration-300 focus:scale-105 focus:shadow-lg ${errors.email ? 'border-red-400 bg-red-50' : 'border-slate-200 focus:border-orange-400'}`}
+                          required
+                        />
+                        {errors.email && <p className="text-red-500 text-sm font-medium flex items-center gap-2">⚠ {errors.email}</p>}
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-3">
+                      <label className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Subject</label>
                       <Input
-                        name="name"
-                        placeholder="Your Name"
-                        value={formData.name}
+                        name="subject"
+                        placeholder="What's this about?"
+                        value={formData.subject}
                         onChange={handleChange}
-                        className={`h-12 ${errors.name ? 'border-red-500' : ''}`}
+                        className={`h-14 text-lg border-2 rounded-xl transition-all duration-300 focus:scale-105 focus:shadow-lg ${errors.subject ? 'border-red-400 bg-red-50' : 'border-slate-200 focus:border-orange-400'}`}
                         required
                       />
-                      {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+                      {errors.subject && <p className="text-red-500 text-sm font-medium flex items-center gap-2">⚠ {errors.subject}</p>}
                     </div>
-                    <div className="space-y-2">
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Your Email"
-                        value={formData.email}
+                    
+                    <div className="space-y-3">
+                      <label className="text-sm font-semibold text-slate-700 uppercase tracking-wider">Message</label>
+                      <Textarea
+                        name="message"
+                        placeholder="Tell me about your project, ideas, or just say hello! I'd love to hear from you."
+                        rows={6}
+                        value={formData.message}
                         onChange={handleChange}
-                        className={`h-12 ${errors.email ? 'border-red-500' : ''}`}
+                        className={`text-lg border-2 rounded-xl resize-none transition-all duration-300 focus:scale-105 focus:shadow-lg ${errors.message ? 'border-red-400 bg-red-50' : 'border-slate-200 focus:border-orange-400'}`}
                         required
                       />
-                      {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+                      {errors.message && <p className="text-red-500 text-sm font-medium flex items-center gap-2">⚠ {errors.message}</p>}
                     </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Input
-                      name="subject"
-                      placeholder="Subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className={`h-12 ${errors.subject ? 'border-red-500' : ''}`}
-                      required
-                    />
-                    {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className={`resize-none ${errors.message ? 'border-red-500' : ''}`}
-                      required
-                    />
-                    {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-2 h-12 text-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 hover:scale-[1.02]"
-                  >
-                    <Send size={18} />
-                    {isSubmitting ? 'Opening Mail Client...' : 'Send Message'}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                    
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full h-16 text-xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed group"
+                    >
+                      <Send className="mr-3 group-hover:translate-x-1 transition-transform duration-300" size={24} />
+                      {isSubmitting ? 'Opening Mail Client...' : 'Send Message'}
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
