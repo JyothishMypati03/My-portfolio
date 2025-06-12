@@ -1,8 +1,12 @@
 
+import { Code, Server, Wrench } from 'lucide-react';
+
 const Skills = () => {
   const skillCategories = [
     {
       title: "Frontend",
+      icon: Code,
+      color: "text-blue-500",
       skills: [
         { name: "React", level: 90 },
         { name: "TypeScript", level: 85 },
@@ -12,6 +16,8 @@ const Skills = () => {
     },
     {
       title: "Backend",
+      icon: Server,
+      color: "text-green-500",
       skills: [
         { name: "Node.js", level: 88 },
         { name: "Python", level: 82 },
@@ -21,6 +27,8 @@ const Skills = () => {
     },
     {
       title: "Tools & Others",
+      icon: Wrench,
+      color: "text-purple-500",
       skills: [
         { name: "Git", level: 92 },
         { name: "Docker", level: 75 },
@@ -31,33 +39,45 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-background">
+    <section id="skills" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Skills & Expertise</h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-            My technical skills and tools I love to work with.
-          </p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Skills & Expertise</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              My technical skills and tools I love to work with.
+            </p>
+          </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {skillCategories.map((category, index) => (
-              <div key={index} className="space-y-6">
-                <h3 className="text-xl font-semibold text-center mb-6">{category.title}</h3>
+              <div key={index} className="bg-card rounded-2xl p-8 border border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-center gap-3 mb-8">
+                  <category.icon className={`${category.color} bg-muted rounded-lg p-2`} size={40} />
+                  <h3 className="text-xl font-semibold">{category.title}</h3>
+                </div>
                 
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                <div className="space-y-6">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="space-y-3">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                        <span className="text-sm font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded">
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                        <div 
+                          className="bg-gradient-to-r from-orange-500 to-orange-600 h-3 rounded-full transition-all duration-1000 ease-out shadow-sm"
+                          style={{ 
+                            width: `${skill.level}%`,
+                            animationDelay: `${skillIndex * 200}ms`
+                          }}
+                        />
+                      </div>
                     </div>
-                    <div className="w-full bg-muted rounded-full h-2">
-                      <div 
-                        className="bg-orange-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             ))}
           </div>
