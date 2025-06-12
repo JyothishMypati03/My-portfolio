@@ -38,16 +38,35 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:mjyothish04@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open mail client
+      window.location.href = mailtoLink;
+      
       toast({
-        title: "Message sent successfully! 🎉",
-        description: "Thank you for your message. I'll get back to you within 24 hours!",
+        title: "Mail client opened! 📧",
+        description: "Your default mail client should open with the pre-filled message.",
       });
+      
+      // Reset form
       setFormData({ name: '', email: '', subject: '', message: '' });
       setErrors({});
+      
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -62,7 +81,7 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex@mypati.com",
+      value: "mjyothish04@gmail.com",
       color: "text-orange-500"
     },
     {
@@ -86,8 +105,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 via-transparent to-orange-100/30"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
@@ -108,7 +130,7 @@ const Contact = () => {
               
               <div className="grid gap-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:shadow-md transition-all duration-300">
+                  <div key={index} className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:shadow-md transition-all duration-300 hover:scale-[1.02]">
                     <info.icon className={`${info.color} bg-muted rounded-lg p-2`} size={40} />
                     <div>
                       <p className="font-medium text-foreground">{info.label}</p>
@@ -119,7 +141,7 @@ const Contact = () => {
               </div>
             </div>
             
-            <Card className="shadow-xl border-border">
+            <Card className="shadow-xl border-border backdrop-blur-sm">
               <CardContent className="p-8">
                 <h3 className="text-xl font-semibold mb-6">Send a message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -177,10 +199,10 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-2 h-12 text-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white flex items-center gap-2 h-12 text-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 hover:scale-[1.02]"
                   >
                     <Send size={18} />
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Opening Mail Client...' : 'Send Message'}
                   </Button>
                 </form>
               </CardContent>
