@@ -1,14 +1,14 @@
 
-import { Code, Users,Gamepad,VideoIcon ,Book,ImageIcon} from 'lucide-react';
+import { Code, BrainCircuitIcon,Palette,Book} from 'lucide-react';
 
 const About = () => {
   const interests = [
-    { icon: Code, label: "Open Source", color: "text-blue-500" },
-    { icon: Users, label: "Mentoring", color: "text-purple-500" },
-    { icon: Book, label: "Learning", color: "text-green-500" }, 
-    { icon: Gamepad, label: "Gaming", color: "text-pink-500" },
-    { icon: VideoIcon, label: "Video Editing", color: "text-teal-500" },
-    { icon: ImageIcon, label: "Photo Editing", color: "text-pink-500" }
+    { icon: Code , label: "Development", color: "text-blue-500" },
+    { icon: BrainCircuitIcon, label: "Technology", color: "text-purple-500" },
+    { icon: Book, label: "Upskilling", color: "text-green-500" }, 
+    { icon: Palette, label: "Designing", color: "text-green-500" }
+
+    
     
     
   ];
@@ -30,11 +30,11 @@ const About = () => {
               <div className="space-y-8">
                 <div className="space-y-6">
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I'm an aspiring full-stack developer with a growing passion for both the MERN stack and artificial intelligence. I'm building skills across both areas because I believe the future belongs to those who can bridge web development and intelligent systems.
+                    I’m currently pursuing my final year of B.Tech and I’m passionate about becoming a Full Stack Web Developer. I enjoy building modern web applications and understanding how real-world systems work—from frontend UI to backend logic and databases.
                   </p>
                   
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    When I’m not coding, I’m usually deep-diving into the latest tech trends, working on personal projects, or collaborating with like-minded creators online. I believe that the best developers don’t just write great code—they understand people, stay curious, and keep building, one line at a time.
+                    I’m also doing an internship at Tap Academy as a Full Stack Web Developer Intern, where I’m strengthening my skills by working on projects, improving problem-solving, and learning the latest technologies..
                   </p>
                 </div>
                 
@@ -54,7 +54,9 @@ const About = () => {
                   <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">React</span>
                   <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">JavaScript</span>
                   <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium hover:bg-green-200 transition-colors duration-300">Node.js</span>
-                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">Python</span>
+                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">Express.js</span>
+                   <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">MySQL</span>
+                   <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">MongoDB</span>
                 </div>
               </div>
               
@@ -77,3 +79,4 @@ const About = () => {
 };
 
 export default About;
+
