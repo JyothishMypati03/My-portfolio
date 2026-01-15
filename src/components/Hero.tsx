@@ -46,12 +46,10 @@ const Hero = () => {
             {/* Premium subtitle */}
             <div className="mb-12 space-y-4">
               <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-light leading-relaxed">
-                 Aspiring <span className="text-orange-500 font-semibold">Full-Stack</span> Developer ,
+                 Aspiring <span className="text-orange-500 font-semibold">Full-Stack</span> Developer 
               </p>
               
-              <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-light leading-relaxed">
-                <span className="text-orange-500 font-semibold">Prompt </span>Engineer , <span className="text-orange-500 font-semibold">Canva </span>Artist & <span className="text-orange-500 font-semibold">AI </span> Generalist
-              </p>
+              
                
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mt-8">
                Building innovative, AI-powered web experiences that will inspire and engage. 
@@ -103,3 +101,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
