@@ -9,13 +9,13 @@ const Resume = () => {
   const handleDownloadResume = () => {
     // Create a simple resume content
     const resumeContent = `
-ALEX - FULL STACK DEVELOPER
+Jyothish - FULL STACK DEVELOPER
 Email: mjyothish04@gmail.com
-Phone: +1 (555) 123-4567
-Location: San Francisco, CA
+Phone: +91 6300351586
+Location: Nellore , Andhra pradesh , India
 
 EXPERIENCE:
-• Senior Full Stack Developer - TechCorp Inc. (2022 - Present)
+•  Full Stack Web Developer  Intern - TAP Academy. (2026 - Present)
   - Led development of multiple web applications using React and Node.js
   - Improved user engagement by 40%
 
@@ -46,7 +46,7 @@ SKILLS:
     
     toast({
       title: "Resume Downloaded! 📄",
-      description: "Your resume has been downloaded as Alex_Resume.txt",
+      description: "Your resume has been downloaded as Jyothish_Resume.txt",
     });
   };
 
@@ -86,10 +86,10 @@ SKILLS:
           <h2>EXPERIENCE</h2>
           <div class="job">
             <div class="job-title">Web Developer Intern</div>
-            <div class="company">Zaalima. • 2025 - Present</div>
+            <div class="company">TAP Academy • 2026 - Present</div>
             <ul>
-              <li>Led development of multiple web applications using React and Node.js</li>
-              <li>Improved user engagement by 40%</li>
+              <li>Designed and implemented REST APIs using Java and Spring Boot, enabling seamless integration between frontend and backend systems.</li>
+              
             </ul>
           </div>
 
@@ -142,13 +142,13 @@ SKILLS:
   const highlights = [
     {
       icon: Award,
-      title: "1 Year Experience",
-      description: "Full-stack development with AI technologies"
+      title: "0 Year Experience",
+      description: "Full-stack Web development with AI technologies"
     },
     {
       icon: Calendar,
-      title: "2 Projects Delivered",
-      description: "Successfully delivered 2 mini projects"
+      title: "1 Project Delivered",
+      description: "Successfully delivered 1 mini project"
     },
     {
       icon: MapPin,
@@ -218,9 +218,9 @@ SKILLS:
                 <div className="space-y-6">
                   <div className="border-l-3 border-orange-500 pl-6 relative">
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-orange-500 rounded-full"></div>
-                    <h4 className="font-semibold text-lg">Web Developer Intern</h4>
-                    <p className="text-sm text-muted-foreground mb-2">Zaalima. • 2025 - Present</p>
-                    <p className="text-sm leading-relaxed">Led development of multiple web applications using React and Node.js, improving user engagement by 40%</p>
+                    <h4 className="font-semibold text-lg"> Full stack Web Developer Intern</h4>
+                    <p className="text-sm text-muted-foreground mb-2">TAP Academy • JAN 2026 - Present</p>
+                    <p className="text-sm leading-relaxed">Designed and implemented REST APIs using Java and Spring Boot, enabling seamless integration between frontend and backend systems.</p>
                   </div>
                   {/*}
                   <div className="border-l-3 border-orange-300 pl-6 relative">
@@ -254,3 +254,4 @@ SKILLS:
 };
 
 export default Resume;
+
