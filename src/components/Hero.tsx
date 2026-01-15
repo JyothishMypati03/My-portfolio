@@ -46,7 +46,7 @@ const Hero = () => {
             {/* Premium subtitle */}
             <div className="mb-12 space-y-4">
               <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-light leading-relaxed">
-                 Aspiring <span className="text-orange-500 font-semibold">Full-Stack</span> Developer 
+                 Aspiring <span className="text-orange-500 font-semibold">Full-Stack</span> Web Developer 
               </p>
               
               
@@ -101,4 +101,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
 
