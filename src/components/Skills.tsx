@@ -11,7 +11,7 @@ const Skills = () => {
         { name: "React", level: 50 },
         { name: "JavaScript", level: 60 },
         { name: "TypeScript", level: 20 },
-        { name: "Tailwind CSS", level: 75 }
+        { name: "Tailwind CSS", level: 40 }
       ]
     },
     {
@@ -19,21 +19,21 @@ const Skills = () => {
       icon: Server,
       color: "text-green-500",
       skills: [
-        { name: "Node.js", level: 30 },
-        { name: "Python", level: 60 },
-        { name: "PostgreSQL", level: 40 },
-        { name: "MongoDB", level: 40 }
+        { name: "Node.js", level: 60 },
+        { name: "Express.js", level: 60 },
+        { name: "SpringBoot", level: 0 },
+        { name: "REST API", level: 20 }
       ]
     },
     {
-      title: "Tools & Others",
+      title: "Databases",
       icon: Wrench,
       color: "text-purple-500",
       skills: [
-        { name: "Git", level: 60 },
-        { name: "MongoDB Atlas", level: 20 },
+        { name: "Mysql", level: 60 },
+        { name: "MongoDB Atlas", level: 40 },
         { name: "AWS", level: 20 },
-        { name: "Figma", level: 15 }
+        { name: "SQL lite", level: 15 }
       ]
     }
   ];
@@ -88,3 +88,4 @@ const Skills = () => {
 };
 
 export default Skills;
+
