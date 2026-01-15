@@ -1,4 +1,4 @@
-
+ 
 import { Github, Linkedin, Twitter, Mail, Heart, ArrowUp } from 'lucide-react';
 
 const Footer = () => {
@@ -83,7 +83,7 @@ const Footer = () => {
           <div className="border-t border-primary-foreground/20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-primary-foreground/80 flex items-center gap-2 text-center md:text-left">
-                © 2025 Jyothish Mypati.  <Heart size={16} className="text-red-400 animate-pulse" /> 
+                © 2026 Jyothish Mypati.  <Heart size={16} className="text-red-400 animate-pulse" /> 
               </p>
               
               <button 
@@ -102,3 +102,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
