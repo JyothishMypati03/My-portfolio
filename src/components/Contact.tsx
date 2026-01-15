@@ -102,7 +102,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Vadakal SriPerumbudur, Tamil Nadu, India",
+      value: "BTM Layout , Karnataka, India",
       color: "text-emerald-500",
       bgColor: "bg-emerald-50",
       borderColor: "border-emerald-200"
@@ -260,3 +260,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
