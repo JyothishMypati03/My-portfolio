@@ -3,10 +3,10 @@ import { Code, BrainCircuitIcon,Palette,Book} from 'lucide-react';
 
 const About = () => {
   const interests = [
-    { icon: Code , label: "Development", color: "text-blue-500" },
-    { icon: BrainCircuitIcon, label: "Technology", color: "text-purple-500" },
-    { icon: Book, label: "Upskilling", color: "text-green-500" }, 
-    { icon: Palette, label: "Designing", color: "text-green-500" }
+   { icon: Database, label: "Data Engineering", color: "text-blue-500" },
+{ icon: Server, label: "Backend Development", color: "text-purple-500" },
+{ icon: Cloud, label: "Cloud & ETL", color: "text-green-500" },
+{ icon: Code, label: "Full Stack", color: "text-orange-500" },
 
     
     
@@ -30,11 +30,11 @@ const About = () => {
               <div className="space-y-8">
                 <div className="space-y-6">
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I’m currently pursuing my final year of B.Tech and I’m passionate about becoming a Full Stack Web Developer. I enjoy building modern web applications and understanding how real-world systems work—from frontend UI to backend logic and databases.
+                   I’ve completed my B.Tech and am passionate about becoming a Data Engineer. I enjoy building reliable data pipelines and understanding how real-world systems work—from data ingestion and transformation to storage and analytics.
                   </p>
                   
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    I’m also doing an internship at Tap Academy as a Full Stack Web Developer Intern, where I’m strengthening my skills by working on projects, improving problem-solving, and learning the latest technologies..
+                  Completed an onsite Java Full Stack Developer internship at BridgeLabz Solutions LLP, Bengaluru, building Spring Boot REST APIs with PostgreSQL and following Agile/Git workflows.
                   </p>
                 </div>
                 
@@ -51,12 +51,16 @@ const About = () => {
                 </div>
                 
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">React</span>
-                  <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">JavaScript</span>
-                  <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium hover:bg-green-200 transition-colors duration-300">Node.js</span>
-                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">Express.js</span>
-                   <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">MySQL</span>
-                   <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">MongoDB</span>
+                  <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">Python</span>
+                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">PySpark</span>
+                  <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium hover:bg-green-200 transition-colors duration-300">SQL</span>
+                  <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">Java</span>
+                  <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">Spring Boot</span>
+                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">Databricks</span>
+                  <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium hover:bg-green-200 transition-colors duration-300">Azure Data Factory</span>
+                  <span className="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium hover:bg-orange-200 transition-colors duration-300">PostgreSQL</span>
+                  <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium hover:bg-blue-200 transition-colors duration-300">Delta Lake</span>
+                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors duration-300">React.js</span>
                 </div>
               </div>
               
