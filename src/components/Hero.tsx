@@ -46,14 +46,13 @@ const Hero = () => {
             {/* Premium subtitle */}
             <div className="mb-12 space-y-4">
               <p className="text-2xl md:text-3xl lg:text-4xl text-slate-700 font-light leading-relaxed">
-                 Aspiring <span className="text-orange-500 font-semibold">Full-Stack</span> Web Developer 
+                 Aspiring <span className="text-orange-500 font-semibold">Software </span> Engineer 
               </p>
               
               
                
               <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light mt-8">
-               Building innovative, AI-powered web experiences that will inspire and engage. 
-               Let’s turn your vision into reality.
+             Building reliable, scalable data pipelines that turn raw data into meaningful insights. Let's turn your data into real-world impact.
               </p>
             </div>
           </div>
